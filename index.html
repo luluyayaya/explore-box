@@ -1261,7 +1261,7 @@ function renderList(){
         '<div class="place-tags"><span class="tag-pill">'+p.cat+'</span></div>'+ch+
       '</div>'+
       '<div class="place-actions">'+
-        '<button class="icon-btn '+(p.priority?'fav':'')+'" onclick="togglePriority(\''+p.id+'\')" title="'+(p.priority?'取消置顶':'标为优先')+'">'+(p.priority?'❤':'♡')+'</button>'+
+        '<button class="icon-btn '+(p.priority?'fav':'')+'" onclick="togglePriority(\''+p.id+'\')" title="'+(p.priority?'取消置顶':'标为优先')+'">'+(p.priority?'♥':'♡')+'</button>'+
         '<button class="icon-btn" onclick="openEditModal(\''+p.id+'\')" title="编辑">✎</button>'+
         '<button class="icon-btn '+(visits.length?'done':'')+'" onclick="handleCheckin(\''+p.id+'\')" title="'+(visits.length?'再打卡':'打卡')+'">'+(visits.length>0?'✦'+(visits.length>1?'<sup style="font-size:8px;vertical-align:super;">'+visits.length+'</sup>':''):'○')+'</button>'+
         '<button class="icon-btn delete" onclick="deletePlace(\''+p.id+'\')">✕</button>'+
