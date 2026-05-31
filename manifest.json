@@ -1,0 +1,15 @@
+{
+  "name": "探索盲盒",
+  "short_name": "探索盲盒",
+  "description": "记录你想去的地方，随机抽取下一站",
+  "start_url": "/explore-box/",
+  "scope": "/explore-box/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#EDE5D8",
+  "theme_color": "#6D4A62",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

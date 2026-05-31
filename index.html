@@ -2,8 +2,14 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>探索盲盒</title>
+<meta name="theme-color" content="#6D4A62">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="探索盲盒">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="icon-180.png">
 <link href="https://fonts.loli.net/css2?family=ZCOOL+KuaiLe&family=DM+Mono:ital@0;1&family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -681,7 +687,6 @@ body {
           <button class="filter-chip" data-cat="发呆" onclick="setFilter('发呆',this)">发呆</button>
           <button class="filter-chip" data-cat="逛逛" onclick="setFilter('逛逛',this)">逛逛</button>
           <button class="filter-chip" data-cat="出走" onclick="setFilter('出走',this)">出走</button>
-          <button class="filter-chip" data-cat="其他" onclick="setFilter('其他',this)">其他</button>
         </div>
         <select class="city-select" id="city-select" onchange="setCity(this.value)" style="display:none;"></select>
       </div>
@@ -1517,6 +1522,12 @@ async function pushToGist(){
 function closeSplash(){ const s=document.getElementById('splash'); s.classList.add('hide'); setTimeout(()=>s.style.display='none',950); }
 document.querySelectorAll('.modal-overlay').forEach(o=>{ o.addEventListener('click',e=>{ if(e.target===o) o.classList.remove('open'); }); });
 load(); renderCityRow(); renderList();
+
+/* ── PWA Service Worker ── */
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.register('/explore-box/sw.js')
+    .catch(e=>console.warn('SW register failed',e));
+}
 </script>
 <div class="undo-toast" id="undo-toast">
   <span id="undo-toast-msg"></span>
